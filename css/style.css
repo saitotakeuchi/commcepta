@@ -28,15 +28,16 @@ header {
 
 nav ul {
     list-style-type: none;
-    width: 480px;
+    max-width: 480px;
     display: flex;
-    justify-content: space-evenly
+    justify-content: space-between;
 }
 
 nav ul li a {
     color: white;
     font-size: 1em;
     text-decoration: none;
+    margin: 0 10px;
 }
 
 .avatarContainer {
@@ -150,4 +151,63 @@ section {
     border-radius: 50%;
     font-weight: 800;
     font-size: 1.2em;
+}
+
+@media only screen and (max-width: 1200px) {
+    .card {
+        width: 48%;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .card {
+        width: 100%;
+        margin: 0 15px 30px;
+    }
+}
+
+@media only screen and (max-width: 570px) {
+    .card {
+        width: 100%;
+        margin: 0 15px 30px;
+    }
+
+    img.logo {
+        width: 130px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+
+    nav ul li a {
+        font-size: 0.8em;
+        margin: 5px 10px;
+        display: block;
+    }
+
+    .avatar {
+        width: 90px;
+        height: 90px;
+    }
+
+    body {
+        font-size: 9pt;
+    }
+
+    .avatarContainer {
+        width: 120px;
+    }
+
+    .card .avatar .ribbon {
+        width: 25px;
+        height: 25px;
+        line-height: 25px;
+        font-size: 1em;
+    }
+
+    #main-card table tr td {
+        padding: 0 5px;
+    }
 }
