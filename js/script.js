@@ -75,3 +75,27 @@ function buildCards(dados) {
         cardDados.appendChild(divDados);
     }
 }
+
+var clickHandler = function () {
+    var div = document.getElementById('main-card');
+    while (div.firstChild) {
+        div.removeChild(div.firstChild);
+    }
+
+    var cardAtivo = document.querySelector('.ativo');
+    console.log(cardAtivo.classList);
+    cardAtivo.classList.remove("ativo");
+
+    this.className = "card ativo";
+
+    posId = this.dataset.pos;
+
+    var data = request.response;
+    buildMainCard(data);
+};
+
+var anchors = document.querySelectorAll('.card');
+for (var i = 0; i < anchors.length; i++) {
+    var current = anchors[i];
+    current.addEventListener('click', clickHandler, false);
+}
