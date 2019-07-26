@@ -1,3 +1,6 @@
+var posId = 0;
+var mainCard = document.getElementById('main-card');
+
 var requestURL = 'js/dados.json';
 var request = new XMLHttpRequest();
 request.open('GET', requestURL);
@@ -7,11 +10,10 @@ request.send();
 request.onload = function () {
     var data = request.response;
     buildMainCard(data);
-    // buildCards(data);
+    buildCards(data);
 }
 
-var posId = 0;
-var mainCard = document.getElementById('main-card')
+
 
 function buildMainCard(dados) {
     var avatar = document.createElement('img');
@@ -36,6 +38,27 @@ function buildMainCard(dados) {
     mainCard.appendChild(divDados);
 }
 
-// function buildCards(dados) {
+function buildCards(dados) {
+    var pai = document.getElementById('container-cards'),
+        childs = pai.querySelectorAll('.card');
 
-// }
+    for (var i = 0; i < childs.length; ++i) {
+        var cardDados = childs[i];
+
+        var avatar = document.createElement('img');
+        avatar.className = "avatar";
+        avatar.src = 'img/' + dados[i]["foto"];
+        cardDados.appendChild(avatar);
+
+        var divDados = document.createElement('div');
+        var dados1 = document.createElement('h2');
+        var dados2 = document.createElement('p');
+
+        dados1.textContent = dados[i]["nome"];
+        dados2.textContent = dados[i]["cargo"];
+
+        divDados.appendChild(dados1);
+        divDados.appendChild(dados2);
+        cardDados.appendChild(divDados);
+    }
+}
