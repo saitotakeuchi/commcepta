@@ -16,21 +16,24 @@ request.onload = function () {
 
 
 function buildMainCard(dados) {
-    var avatar = document.createElement('img');
+    var avatar = document.createElement('div');
+    var avatarContainer = document.createElement('div');
     avatar.className = "avatar";
-    avatar.src = 'img/' + dados[posId]["foto"];
-    mainCard.appendChild(avatar);
+    avatarContainer.className = "avatarContainer";
+    avatar.style.backgroundImage = 'url(img/' + dados[posId]["foto"] + ')';
+    avatarContainer.appendChild(avatar);
+    mainCard.appendChild(avatarContainer);
 
-    var divDados = document.createElement('div');
-    var dados1 = document.createElement('p');
-    var dados2 = document.createElement('p');
-    var dados3 = document.createElement('p');
+    var divDados = document.createElement('table');
+    var dados1 = document.createElement('tr');
+    var dados2 = document.createElement('tr');
+    var dados3 = document.createElement('tr');
 
     divDados.className = "dados";
 
-    dados1.innerHTML = 'NOME: <span>' + dados[posId]["nome"] + '</span>';
-    dados2.innerHTML = 'CARGO: <span>' + dados[posId]["cargo"] + '</span>';
-    dados3.innerHTML = 'IDADE: <span>' + dados[posId]["idade"] + '</span>';
+    dados1.innerHTML = '<td>NOME:</td><td>' + dados[posId]["nome"] + '</td>';
+    dados2.innerHTML = '<td>CARGO:</td><td>' + dados[posId]["cargo"] + '</td>';
+    dados3.innerHTML = '<td>IDADE:</td><td>' + dados[posId]["idade"] + '</td>';
 
     divDados.appendChild(dados1);
     divDados.appendChild(dados2);
@@ -45,10 +48,20 @@ function buildCards(dados) {
     for (var i = 0; i < childs.length; ++i) {
         var cardDados = childs[i];
 
-        var avatar = document.createElement('img');
+        var avatar = document.createElement('div');
+        var avatarContainer = document.createElement('div');
+        var ribbon = document.createElement('span');
+
         avatar.className = "avatar";
-        avatar.src = 'img/' + dados[i]["foto"];
-        cardDados.appendChild(avatar);
+        avatarContainer.className = "avatarContainer";
+        ribbon.className = "ribbon";
+
+        ribbon.textContent = dados[i]["id"];
+
+        avatar.style.backgroundImage = 'url(img/' + dados[i]["foto"] + ')';
+        avatar.appendChild(ribbon);
+        avatarContainer.appendChild(avatar);
+        cardDados.appendChild(avatarContainer);
 
         var divDados = document.createElement('div');
         var dados1 = document.createElement('h2');

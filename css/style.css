@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12pt;
+    background: #d9d9d9; 
+    background: linear-gradient(to bottom,  #d9d9d9 0%,#ffffff 100%); 
+}
+
+/* HEADER */
+
+header {
+    background: #092331;
+    background: linear-gradient(to right,  #4dd2d2 0%,#092331 100%);
+    height: 120px;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1440px;
+    padding: 0 15px;
+    height: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+nav ul {
+    list-style-type: none;
+    width: 480px;
+    display: flex;
+    justify-content: space-evenly
+}
+
+nav ul li a {
+    color: white;
+    font-size: 1em;
+    text-decoration: none;
+}
+
+.avatarContainer {
+    width: 210px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* MAIN CARD */
+
+section {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+#main-card {
+    height: 200px;
+    background-color: #f0f1ef;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 15px 30px;
+}
+
+#main-card table tr td {
+    padding: 5px;
+}
+
+#main-card table tr td:first-child {
+    text-align: right;
+    color: #707070;
+}
+#main-card table tr td:last-child {
+    font-weight: 700;
+    font-size: 1.2em;
+}
+
+/* CARDS */
+
+#container-cards {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: #f0f1ef;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    width: 31%;
+    margin: 0 1% 30px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 200px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.card:hover {
+    background-color: #00427b;
+}
+
+.card:hover h2, .card:hover p {
+    color: #fff;
+}
+
+.card.ativo {
+    background-color: #002b50;
+}
+
+.card.ativo h2, .card.ativo p {
+    color: #fff;
+}
+
+.card h2 {
+    margin: 0 0 5px;
+}
+
+.card p {
+    margin: 0;
+}
+
+.card .avatar {
+    position: relative;
+}
+
+.card .avatar .ribbon {
+    display: block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background-color: #4dd2d2;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+    font-weight: 800;
+    font-size: 1.2em;
+}
+
